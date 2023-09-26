@@ -7,8 +7,8 @@ using System.Reflection;
 // Public Key - encryption algorithm
 
 
-//[assembly: AssemblyVersion("1.0.0.0")]         // requires knowledge in attributes/reflections
-[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]         // requires knowledge in attributes/reflections
+//[assembly: AssemblyVersion("2.0.0.0")]
 //----4 Assembly IDENTIFYER---
 // 1- Name
 // 2- Version
@@ -586,6 +586,183 @@ C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assemb
 C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>type KulpotKey.snk
 ☻$RSA2♦☺☺▌y£╖]êä\H╢öL·{¼▒D☼╗I╣▐╪xNºqÉ╦xÜ┤ª⌡?mdçuφΓú\▄v┴╝╪∟:■SÖh ▒↓⌡üW░µ=╓▓_Q¡╣°╢▬*i~☺ªI⌐_Çv2L·kƒ½φ♠X₧^ëE₧èΣ»╚&f↑♥┼îUæ█⌡Xα.♣∩¡(╝♂`\►╔;!<nx☻D£ó7æ%÷V┌eáφ╤T╕\┴├vú┤╣kåb╓u≤Ωx≤↓pOëΩ▬πôúA¼)@F◄╢8Sα÷↔Θε╟ƒ☺╫,─>⌡┐
 
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>sn -p KulpotKey.snk MyPublicKey.pubKey
+
+Microsoft (R) .NET Framework Strong Name Utility  Version 4.0.30319.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Public key written to MyPublicKey.pubKey
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
+
+ Directory of C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key
+
+27/09/2023  05:43 am    <DIR>          .
+27/09/2023  05:43 am    <DIR>          ..
+27/09/2023  05:19 am               189 App.config
+27/09/2023  05:19 am    <DIR>          bin
+27/09/2023  05:19 am             2,426 DotNet Assembly Public Key Private Key.csproj
+27/09/2023  05:35 am               596 KulpotKey.snk
+27/09/2023  05:43 am               160 MyPublicKey.pubKey
+27/09/2023  05:19 am    <DIR>          obj
+27/09/2023  05:37 am            25,926 Program.cs
+27/09/2023  05:19 am    <DIR>          Properties
+               5 File(s)         29,297 bytes
+               5 Dir(s)  488,697,110,528 bytes free
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>sn -tp MyPublicKey.pubKey
+
+Microsoft (R) .NET Framework Strong Name Utility  Version 4.0.30319.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Public key (hash algorithm: sha1):
+0024000004800000940000000602000000240000525341310004000001000100dd799cb75d8884
+5c48b6944cfa7bacb1440fbb49b9de00d8784ea77190cb789ab4a6f53f6d648775ede2a35cdc76
+c1bcd81c3afe53996820b119f58157b0e63dd6b25f511b70adb9f8b6162a697e01a649a95f8076
+324cfa6b9fabed0006589e5e89459e8ae400afc826661803c58c5591dbf558e02e05efad28bc0b
+605c10c9
+
+Public key token is 3836b1fe2642961f
+
+---------------Created---------------------
+using System;
+using System.Reflection;
+
+[assembly: AssemblyVersion("1.0.0.0")]
+
+public class Cow
+{
+    public static void Moo()
+    {
+        Console.WriteLine("Moo Version 1");
+    }
+}
+
+-------------------------------------------
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>csc /keyfile:kulpotkey.snk /t:library /out:Farm.dll Program.cs
+Microsoft (R) Visual C# Compiler version 4.7.0-3.23416.8 (43b0b05c)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
+
+ Directory of C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key
+
+27/09/2023  05:49 am    <DIR>          .
+27/09/2023  05:49 am    <DIR>          ..
+27/09/2023  05:19 am               189 App.config
+27/09/2023  05:19 am    <DIR>          bin
+27/09/2023  05:19 am             2,426 DotNet Assembly Public Key Private Key.csproj
+27/09/2023  05:49 am             4,096 Farm.dll
+27/09/2023  05:35 am               596 KulpotKey.snk
+27/09/2023  05:43 am               160 MyPublicKey.pubKey
+27/09/2023  05:19 am    <DIR>          obj
+27/09/2023  05:48 am            28,150 Program.cs
+27/09/2023  05:19 am    <DIR>          Properties
+               6 File(s)         35,617 bytes
+               5 Dir(s)  488,697,081,856 bytes free
+
+---------------Created------------------------------
+using System;
+using Sytem.Reflection;
+
+//[assembly: AssemblyVersion("1.0.0.0")]
+
+//public class Cow
+//{
+//    public static void Moo()
+//    {
+//        Console.WriteLine("Moo Version 1");
+//    }
+//}
+
+class MeMainClass
+{
+    static void Main()
+    {
+        Cow.Moo();
+    }
+}
+
+---------------------------------------------------
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>csc /r:Farm.dll Program.cs
+Microsoft (R) Visual C# Compiler version 4.7.0-3.23416.8 (43b0b05c)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>Program.exe
+Moo Version 1
+
+--------------------Making A Spoof/Virus File--------------------------
+---------------Created-----------------------------------
+using System;
+using Sytem.Reflection;
+
+[assembly: AssemblyVersion("1.0.0.0")]
+
+//public class Cow
+//{
+//    public static void Moo()
+//    {
+//        Console.WriteLine("Moo Version 1");
+//    }
+//}
+
+//class MeMainClass
+//{
+//    static void Main()
+//    {
+//        Cow.Moo();
+//    }
+//}
+
+public class Cow
+{
+    public static void Moo()
+    {
+        Console.WriteLine("I am a virus...doing bad things...trying to spoof the fram assembly");
+    }
+}
+
+-------------------------------------------------------------
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>csc /t:library /out:Farm.dll Program.cs
+Microsoft (R) Visual C# Compiler version 4.7.0-3.23416.8 (43b0b05c)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
+
+ Directory of C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key
+
+27/09/2023  06:00 am    <DIR>          .
+27/09/2023  06:00 am    <DIR>          ..
+27/09/2023  05:19 am               189 App.config
+27/09/2023  05:19 am    <DIR>          bin
+27/09/2023  05:19 am             2,426 DotNet Assembly Public Key Private Key.csproj
+27/09/2023  06:01 am             3,584 Farm.dll
+27/09/2023  05:35 am               596 KulpotKey.snk
+27/09/2023  05:43 am               160 MyPublicKey.pubKey
+27/09/2023  05:19 am    <DIR>          obj
+27/09/2023  06:00 am            31,106 Program.cs
+27/09/2023  05:51 am             4,096 Program.exe
+27/09/2023  05:19 am    <DIR>          Properties
+               7 File(s)         42,157 bytes
+               5 Dir(s)  488,685,027,328 bytes free
+
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>Program.exe
+
+Unhandled Exception: System.IO.FileLoadException: Could not load file or assembly 'Farm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3836b1fe2642961f' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at MeMainClass.Main()
+--------------------Making A Spoof/Virus File--------------------------END
 
 
  * 
@@ -608,10 +785,18 @@ C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assemb
 //    }
 //}
 
+//public class Cow
+//{
+//    public static void Moo()
+//    {
+//        Console.WriteLine("Moo Version 2");
+//    }
+//}
+
 public class Cow
 {
     public static void Moo()
     {
-        Console.WriteLine("Moo Version 2");
+        Console.WriteLine("I am a virus...doing bad things...trying to spoof the fram assembly");
     }
 }
