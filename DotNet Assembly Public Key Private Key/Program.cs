@@ -583,6 +583,9 @@ C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assemb
                4 File(s)         27,438 bytes
                5 Dir(s)  488,700,121,088 bytes free
 
+C:\Users\sunny\source\repos\DotNet Assembly Public Key Private Key\DotNet Assembly Public Key Private Key>type KulpotKey.snk
+☻$RSA2♦☺☺▌y£╖]êä\H╢öL·{¼▒D☼╗I╣▐╪xNºqÉ╦xÜ┤ª⌡?mdçuφΓú\▄v┴╝╪∟:■SÖh ▒↓⌡üW░µ=╓▓_Q¡╣°╢▬*i~☺ªI⌐_Çv2L·kƒ½φ♠X₧^ëE₧èΣ»╚&f↑♥┼îUæ█⌡Xα.♣∩¡(╝♂`\►╔;!<nx☻D£ó7æ%÷V┌eáφ╤T╕\┴├vú┤╣kåb╓u≤Ωx≤↓pOëΩ▬πôúA¼)@F◄╢8Sα÷↔Θε╟ƒ☺╫,─>⌡┐
+
 
 
  * 
